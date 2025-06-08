@@ -12,10 +12,10 @@ public class Employee {
 
 
     public static void main(String[] args) {
-        List<Person> people = new ArrayList<>();
+        List<CamparatorUseCases.CamparatorUseCases.Person> people = new ArrayList<>();
 
         // Creating 5 records
-        people.add(new Person(22, "Bob"));
+        people.add(new CamparatorUseCases.CamparatorUseCases.Person(22, "Bob"));
         people.add(new Person(4, "Diana"));
         people.add(new Person(35, "Ethan"));
         people.add(new Person(21, "Alice"));
