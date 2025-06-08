@@ -43,6 +43,15 @@ class Employee {
     public void display() {
         System.out.println("ID: " + id + ", Name: " + name + ", Salary: $" + salary);
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }
 
 public class EmployeeCustome {
@@ -73,6 +82,21 @@ public class EmployeeCustome {
         employees.add(new Employee(6, "Fiona", 53000));
         employees.add(new Employee(1, "Alice", 50000));
         employees.add(new Employee(2, "Bob", 55000));
+
+
+        return employees;
+    }
+
+    public static List<Employee> getEmployees2() {
+        List<Employee> employees = new ArrayList<>();
+
+        employees.add(new Employee(3, "Pharlie", 60000));
+        employees.add(new Employee(4, "Oiana", 58000));
+        employees.add(new Employee(5, "Nthan", 62000));
+        employees.add(new Employee(6, "Miona", 500));
+        employees.add(new Employee(1, "Zlice", 50000));
+        employees.add(new Employee(2, "Yob", 55000));
+        employees.add(new Employee(2, "Xob", 55000));
 
 
         return employees;
