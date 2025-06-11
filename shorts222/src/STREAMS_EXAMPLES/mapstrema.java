@@ -140,7 +140,7 @@ public class mapstrema {
 
         System.out.println(lemp.stream().map(employee -> employee.getSalary()).reduce(Integer::sum));
 
-        System.out.println("----------day 47---------- creating array from using streams");
+        System.out.println("---------- day 47---------- creating array from using streams");
 
         List<Employee> ee = lemp.stream().filter(employee -> employee.getSalary() > 60_000).collect(Collectors.toList());
 
