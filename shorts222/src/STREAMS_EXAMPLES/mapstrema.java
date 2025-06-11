@@ -135,8 +135,14 @@ public class mapstrema {
 
         System.out.println("Days 45 --- sum of all slary"); //
 
-        lemp.stream().map(employee -> employee.getSalary()).min((o1, o2) -> o1-o2);
-        lemp.stream().map(employee -> employee.getSalary()).min((o1, o2) -> o1-o2);
+       // System.out.println(lemp.stream().map(employee -> employee.getSalary()).min((o1, o2) -> o1-o2));;
+
+
+        System.out.println(lemp.stream().map(employee -> employee.getSalary()).reduce(Integer::sum));
+
+        System.out.println("----------day 47---------- creating array from using streams");
+
+        List<Employee> ee = lemp.stream().filter(employee -> employee.getSalary() > 60_000).collect(Collectors.toList());
 
 
 
