@@ -3,12 +3,13 @@ package STREAMS_EXAMPLES;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class custom_filter {
     public static void main(String[] args) {
         List<Employee> lemp=EmployeeCustome.getEmployees();
         for (Employee emp : lemp) {
-            emp.display();
+//            emp.display();
         }
 
 //        System.out.println("OUTPUT----------------------------");
@@ -43,8 +44,13 @@ public class custom_filter {
             loadeFromlemp.getSalary() >= 60000
         ).sorted((o1, o2) -> o1.getName().compareTo(o2.getName())) .forEach(Employee::display);;
 
+        System.out.println("-------------------------------------------------------------");
+        System.out.println(
+                lemp.stream().map(Employee::getSalary).collect(Collectors.toList()));
 
-
+        System.out.println(lemp.stream()
+                .map(employee -> employee.getSalary())
+                .reduce((integer, integer2) -> integer+integer2));
 
 
     }

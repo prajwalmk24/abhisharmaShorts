@@ -1,9 +1,7 @@
 package STREAMS_EXAMPLES;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,6 +10,10 @@ public class mapstrema {
         List<Employee> lemp=EmployeeCustome.getEmployees();
         List<Employee> lemp2=EmployeeCustome.getEmployees2();
         List<Employee> lemp3=EmployeeCustome.getEmployees2();
+
+        // check for maps condition
+        List<Employee> lemp4=EmployeeCustome.getEmployees3();
+
 
 
         for (Employee emp : lemp) {
@@ -131,14 +133,72 @@ public class mapstrema {
         System.out.println("Days 44 --- finding random element"); //
 //findAny() works only in parallel stream
         System.out.println(lemp.stream().findAny());
-        System.out.println(lemp.parallelStream().findAny());
+        System.out.println(lemp.parallelStream().findAny()); //works 100% perfect
 
         System.out.println("Days 45 --- sum of all slary"); //
 
         lemp.stream().map(employee -> employee.getSalary()).min((o1, o2) -> o1-o2);
-        lemp.stream().map(employee -> employee.getSalary()).min((o1, o2) -> o1-o2);
+
+        System.out.println(        lemp.stream().map(employee -> employee.getSalary()).reduce((integer, integer2) -> integer+integer2));
+
+        System.out.println("-----------day 47 --- creating Employee[] array from streams----------");
+
+        System.out.println(lemp.stream().toArray(value -> new Employee[value]));
+
+        Employee[] emplStreamObj = lemp.stream().toArray(value -> new Employee[value]);
+        System.out.println(Arrays.toString(emplStreamObj));
+
+        // or
+
+        Employee[] fromMehtodRef = lemp.stream().toArray(Employee[]::new);
+        System.out.println("fromMehtodRef"+ Arrays.toString(fromMehtodRef));
 
 
+        System.out.println("Crate list from Stream --> modifiable list");
+
+        List<Employee> listFromStream = lemp.stream().collect(Collectors.toList());
+        print(listFromStream);
+        System.out.println("listFromStream"+listFromStream);
+
+        System.out.println("some codition  ");
+
+//        List<Employee> ee = lemp.stream().toList();//// ❌ Only Java 16+
+//        print(ee);//Exception in thread "main" java.lang.UnsupportedOperationException
+
+        //System.out.println("ee"+ee);//
+        //changed to java 17 it worked and it unmodifable list
+
+        //day 50 convert to Set
+        // call toSet() similar to toList()
+
+
+        System.out.println("Day 51 create map from stream");
+        Map<Integer, Employee > creatingMap= new HashMap<>();
+
+        lemp4.stream().map(employee ->employee.getId());
+        //  <R> Stream<R> map(Function<? super T, ? extends R> mapper);
+
+//        creatingMap =lemp4.stream().collect(Collectors.toMap(employee -> employee.getId(),employee -> employee));
+//        Collector<T, ?, Map<K,U>> toMap(Function<? super T, ? extends K> keyMapper,
+//                Function<? super T, ? extends U> valueMapper) {
+
+        System.out.println("creatingMap"+creatingMap);
+        //Exception in thread "main" java.lang.IllegalStateException: Duplicate key 3 (attempted merging values Employee{id=3, name='Pharlie', salary=60000} and Employee{id=3, name='Bob Duplicate', salary=57000})
+        // the line 181 throws error if there is duplicate values of key
+
+        creatingMap=  lemp4
+                .stream()
+                .collect(Collectors.toMap(employee -> employee.getId(), employee -> employee,(o, o2) -> o2));
+        System.out.println("creatingMap"+creatingMap);
+
+    }
+
+    private static void print(List<Employee> listFromStream) {
+        System.out.println("Before removal element in list ");
+        listFromStream.remove(0);
+
+        listFromStream.stream().forEach(System.out::println);
+        System.out.println("After removal element in list ");
 
     }
 }
