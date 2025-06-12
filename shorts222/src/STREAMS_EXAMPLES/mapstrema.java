@@ -191,6 +191,24 @@ public class mapstrema {
                 .collect(Collectors.toMap(employee -> employee.getId(), employee -> employee,(o, o2) -> o2));
         System.out.println("creatingMap"+creatingMap);
 
+        System.out.println("creatingMap"+creatingMap);
+//        creatingMap.forEach((key, value) -> System.out.println(key + ": " + value));
+
+        System.out.println("-52--------------Group by Elements usng streams-----------");
+// req , group the mployees based on salary
+        Map<Integer, List<Employee>> er = lemp4.stream()
+                .collect(Collectors.groupingBy(employee -> employee.getSalary(), Collectors.toList()));
+        System.out.println("er"+er);
+
+        System.out.println("-53--------------Partioning Elements usng streams-----------");
+
+        Map<Boolean, List<Employee>> partiningBySalary = new HashMap<>();
+
+        partiningBySalary=lemp4.stream()
+                .collect(Collectors.partitioningBy(employee -> employee.getSalary() >50_000,Collectors.toList()));
+        System.out.println("partiningBySalary"+partiningBySalary);
+        System.out.println("-55--------------Streams or Parallel streams-----------");
+
     }
 
     private static void print(List<Employee> listFromStream) {
