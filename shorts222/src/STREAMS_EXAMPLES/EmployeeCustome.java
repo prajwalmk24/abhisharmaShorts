@@ -108,8 +108,8 @@ public class EmployeeCustome {
         employees.add(new Employee(3, "Pharlie", 60000));
         employees.add(new Employee(1, "Alice Again", 51000));
         employees.add(new Employee(5, "Nthan", 62000));
-        employees.add(new Employee(3, "Bob Duplicate", 57000));
-        employees.add(new Employee(1, "Zlice", 50000));
+        employees.add(new Employee(3, "Bob Duplicate", 51000));
+        employees.add(new Employee(1, "Zlice", 55000));
         employees.add(new Employee(2, "Yob", 56000));
         employees.add(new Employee(2, "Xob", 55000));
 
