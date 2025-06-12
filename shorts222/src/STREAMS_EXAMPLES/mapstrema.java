@@ -156,7 +156,7 @@ public class mapstrema {
 
         System.out.println("Crate list from Stream --> modifiable list");
 
-        List<Employee> listFromStream = lemp.stream().collect(Collectors.toList());
+        List<Employee> listFromStream = lemp.stream().collect(Collectors.toList());// works for all java 8+
         print(listFromStream);
         System.out.println("listFromStream"+listFromStream);
 
