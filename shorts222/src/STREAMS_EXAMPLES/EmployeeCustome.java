@@ -116,5 +116,13 @@ public class EmployeeCustome {
 
         return employees;
     }
+
+    public static Employee getEmployees4() {
+
+        // Adding 5-6 records
+        return new Employee(3, "Charlie", 60000);
+
+
+    }
 }
 
