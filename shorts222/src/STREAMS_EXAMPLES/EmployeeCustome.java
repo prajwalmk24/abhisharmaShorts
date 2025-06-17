@@ -118,9 +118,17 @@ public class EmployeeCustome {
     }
 
     public static Employee getEmployees4() {
+        return null;
+
+//        return new Employee(3, "Charlie", 60000);
+
+
+    }
+
+    public static Employee dummyMehtod() {
 
         // Adding 5-6 records
-        return new Employee(3, "Charlie", 60000);
+        return new Employee(0,"NA",0);
 
 
     }
