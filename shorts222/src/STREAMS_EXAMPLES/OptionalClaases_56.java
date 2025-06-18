@@ -71,7 +71,7 @@ public class OptionalClaases_56 {
         try {
             empObj4 = lemp.stream()
                     .filter(employee -> employee.getSalary() > sal)
-                    .findFirst().orElseThrow(() -> new MyCustomException());
+                    .findFirst().orElseThrow(() -> new MyCustomException("l**** exceptions getting created everytime"));
         } catch (MyCustomException e) {
             System.out.println("Message exact "+ e.getMessage());
         }
