@@ -115,7 +115,7 @@ public class OptionalClaases_56 {
         System.out.println("66 Map () and flatMap() in Optional");
 ooo.map(employee -> employee.getName()).ifPresentOrElse(employee -> System.out.println("Map employee"+employee),() -> System.out.println(" Map No such element is present"));
         System.out.println("Or() in Optional ");
-
+        System.out.println("");
 
 
     }
