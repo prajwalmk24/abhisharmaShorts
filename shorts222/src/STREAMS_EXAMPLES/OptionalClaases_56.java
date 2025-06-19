@@ -71,7 +71,7 @@ public class OptionalClaases_56 {
         try {
             empObj4 = lemp.stream()
                     .filter(employee -> employee.getSalary() > sal)
-                    .findFirst().orElseThrow(() -> new MyCustomException());
+                    .findFirst().orElseThrow(() -> new MyCustomException("l**** exceptions getting created everytime"));
         } catch (MyCustomException e) {
             System.out.println("Message exact "+ e.getMessage());
         }
@@ -111,11 +111,16 @@ public class OptionalClaases_56 {
 
         ooo.ifPresentOrElse(employee -> System.out.println("emp"+employee),() -> System.out.println("No emp"));
 
-
+        //please solve this problem flat map
+//        from this below line
         System.out.println("66 Map () and flatMap() in Optional");
-ooo.map(employee -> employee.getName()).ifPresentOrElse(employee -> System.out.println("Map employee"+employee),() -> System.out.println(" Map No such element is present"));
+
+        ooo.map(employee -> employee.getName()).ifPresentOrElse(employee -> System.out.println("Map employee name ->  "+employee),() -> System.out.println(" Map No such element is present"));
+
+
         System.out.println("Or() in Optional ");
         System.out.println("");
+
 
 
     }
