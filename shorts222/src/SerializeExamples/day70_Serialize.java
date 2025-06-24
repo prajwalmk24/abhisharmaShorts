@@ -3,7 +3,7 @@ package SerializeExamples;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
-public class day70 {
+public class day70_Serialize {
     public static void main(String[] args) {
         Student s1 = new Student(101, "Prajwal");
 
@@ -15,7 +15,7 @@ public class day70 {
             out.close();
             fileOut.close();
 
-            System.out.println("Object has been serialized");
+            System.out.println("Object has been serialized"+ s1);
 
         } catch (Exception e) {
             e.printStackTrace();
