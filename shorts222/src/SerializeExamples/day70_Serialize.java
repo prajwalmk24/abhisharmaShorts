@@ -5,7 +5,7 @@ import java.io.ObjectOutputStream;
 
 public class day70_Serialize {
     public static void main(String[] args) {
-        Student s1 = new Student(101, "Prajwal");
+        Student s1 = new Student(101, "Prajwal",'f');
 
         try {
             FileOutputStream fileOut = new FileOutputStream("student.ser");

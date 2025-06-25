@@ -6,6 +6,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class deserialize {
+
+    /*
     public static void main(String[] args) {
         Student s1 = new Student(101, "Prajwal");
 
@@ -15,8 +17,8 @@ public class deserialize {
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
 
             out.writeObject(s1);
-//            out.close();
-//            fileOut.close();
+            out.close();
+            fileOut.close();
 
             System.out.println("Object has been serialized"+ s1);
 
@@ -38,7 +40,11 @@ public class deserialize {
             e.printStackTrace();
         }
     }
+
+*/
+
+
+
 }
 
 
-//Examples.Student@3d82c5f3
