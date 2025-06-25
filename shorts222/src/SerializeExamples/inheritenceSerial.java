@@ -20,7 +20,8 @@ public class inheritenceSerial {
             FileOutputStream fileOut = new FileOutputStream("student.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
 
-            out.writeObject(s1);
+            out.writeObject(s1); //pls call it in student
+
 
             out.close();
             fileOut.close();
@@ -36,7 +37,7 @@ public class inheritenceSerial {
             FileInputStream fileOut = new FileInputStream("student.ser");
             ObjectInputStream out = new ObjectInputStream(fileOut);
 
-            Student stfObj = (Student) out.readObject();
+            Student stfObj = (Student) out.readObject(); // pls see the two methods
 
 
             System.out.println("Object has been de-serialized"+stfObj);

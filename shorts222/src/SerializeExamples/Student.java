@@ -1,5 +1,8 @@
 package SerializeExamples;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Student extends Parent implements Serializable  {
@@ -30,6 +33,19 @@ public class Student extends Parent implements Serializable  {
     public String toString() {
         return "Student{id=" + id + ", name='" + nam + "gender=  "+ gender +"}";
     }
+
+
+    private void writeObject(ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+        out.writeChar(gender);
+    }
+
+    public void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        ois.defaultReadObject();
+        gender=ois.readChar();
+    }
+
+
 
 
 }

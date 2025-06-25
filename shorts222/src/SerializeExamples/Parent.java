@@ -1,6 +1,10 @@
 package SerializeExamples;
 
-public class Parent {
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public abstract class Parent {
 
     protected  char gender;
 
@@ -10,4 +14,4 @@ public class Parent {
     }
 
 
-}
+   }
