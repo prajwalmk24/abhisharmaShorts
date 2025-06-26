@@ -7,15 +7,16 @@ import java.io.Serializable;
 
 public class Student extends Parent implements Serializable  {
 
-//    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 //  To see the usecase of searialVersionId , comment the code write object from deserialize to avoid
 //    java.io.InvalidClassException: SerializeExamples.Student; local class incompatible: stream classdesc serialVersionUID = 1, local class serialVersionUID = -6389804740329378697
 
 
 
     int id;
-    static String nam;
+     String nam;
 
+    //Uncomment to use it in serializable.java example
 //    public Student(int id, String name) {
 //        this.id=id;
 //        this.nam=name;
@@ -31,16 +32,19 @@ public class Student extends Parent implements Serializable  {
 
     @Override
     public String toString() {
-        return "Student{id=" + id + ", name='" + nam + "gender=  "+ gender +"}";
+        return "Student{" +
+                "id=" + id +
+                ", gender=" + gender +
+                '}';
     }
 
 
-    private void writeObject(ObjectOutputStream out) throws IOException {
-        out.defaultWriteObject();
-        out.writeChar(gender);
-    }
+//    private void writeObject(ObjectOutputStream out) throws IOException {
+//        out.defaultWriteObject();
+//        out.writeChar(gender);
+//    }
 
-    public void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         ois.defaultReadObject();
         gender=ois.readChar();
     }
