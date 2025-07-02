@@ -19,7 +19,7 @@ public class Consumer_ {
 
         Consumer<String> printUpper = Consumer_::new;
 
-        System.out.println("printUpper" + printUpper);
+        System.out.println("printUpper -> " + printUpper);
         printUpper.accept("hello world");
     }
 }

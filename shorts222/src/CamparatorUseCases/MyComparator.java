@@ -4,7 +4,6 @@ import CamparatorUseCases.CamparatorUseCases.Person;
 
 public class MyComparator {
     MyComparator(){
-
     }
 
     public static int compareByName(Person o1, Person o2){
