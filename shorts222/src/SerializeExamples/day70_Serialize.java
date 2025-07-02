@@ -5,6 +5,7 @@ import java.io.ObjectOutputStream;
 
 public class day70_Serialize {
     public static void main(String[] args) {
+        /*
         Student s1 = new Student(101, "Prajwal",'f');
 
         try {
@@ -20,5 +21,7 @@ public class day70_Serialize {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+         */
     }
 }

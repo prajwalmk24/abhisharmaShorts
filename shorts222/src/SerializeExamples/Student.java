@@ -14,7 +14,9 @@ public class Student extends Parent implements Serializable  {
 
 
     int id;
-     String nam;
+
+    String nam;
+    // static String nam;
 
     //Uncomment to use it in serializable.java example
 //    public Student(int id, String name) {
@@ -30,26 +32,21 @@ public class Student extends Parent implements Serializable  {
 
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", gender=" + gender +
-                '}';
-    }
-
 
 //    private void writeObject(ObjectOutputStream out) throws IOException {
 //        out.defaultWriteObject();
 //        out.writeChar(gender);
 //    }
-
-    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        ois.defaultReadObject();
-        gender=ois.readChar();
+//    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+//        ois.defaultReadObject();
+//        gender=ois.readChar();
+//    }
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", nam='" + nam + '\'' +
+                ", gender=" + gender +
+                '}';
     }
-
-
-
-
 }

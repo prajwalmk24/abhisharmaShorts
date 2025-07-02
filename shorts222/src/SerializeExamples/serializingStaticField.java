@@ -6,10 +6,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class serializingStaticField {
-
+//line 19 in student uncomment
     // serializing the static field is not possible
-/*
+
     public static void main(String[] args) {
+
+        /*
         // make password field as static
         Student s1 = new Student(101, "Prajwal");
 
@@ -20,16 +22,18 @@ public class serializingStaticField {
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
 
             out.writeObject(s1);
-            out.close();
-            fileOut.close();
+
 
             System.out.println("Object has been serialized"+ s1);
+
+            out.close();
+            fileOut.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        Student s2 = new Student(102, "----------");
+        Student s2 = new Student(101, "Prajwalqqqq");
 
         //deserialize
         try {
@@ -44,7 +48,8 @@ public class serializingStaticField {
         } catch (Exception e) {
             e.printStackTrace();
         }
+ */
+
     }
 
- */
 }
