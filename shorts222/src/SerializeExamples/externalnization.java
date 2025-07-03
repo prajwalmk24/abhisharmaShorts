@@ -31,7 +31,7 @@ public class externalnization {
 
         //deserialize
         try {
-            FileInputStream fileOut = new FileInputStream("student.ser");
+            FileInputStream fileOut = new FileInputStream("studentexternal.ser");
             ObjectInputStream out = new ObjectInputStream(fileOut);
 
             StudentExternalixation stfObj = (StudentExternalixation) out.readObject();
@@ -42,6 +42,12 @@ public class externalnization {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+//        output
+//        explain : Here we are not store id to file
+
+//        Object has been serializedStudentExternalixation{id=101, name='Prajwal'}
+//        Object has been de-serializedStudentExternalixation{id=0, name='Prajwal'}
 
     }
 

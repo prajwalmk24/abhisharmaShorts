@@ -15,22 +15,37 @@ public class Student extends Parent implements Serializable  {
 
     int id;
 
-    String nam;
+    transient String nam;
     // static String nam;
+    enumSerial es;
 
-    //Uncomment to use it in serializable.java example
+    public Student(int i, String nam, enumSerial eS) {
+        this.id=id;
+        this.nam=nam;
+        this.es=eS;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", nam='" + nam + '\'' +
+                ", es=" + es +
+                '}';
+    }
+//Uncomment to use it in serializable.java example
 //    public Student(int id, String name) {
 //        this.id=id;
 //        this.nam=name;
 //
 //    }
 
-    public Student(int id, String name,char gender) {
-        super(gender);
-        this.id=id;
-        this.nam=name;
-
-    }
+//    public Student(int id, String name,char gender) {
+//        super(gender);
+//        this.id=id;
+//        this.nam=name;
+//
+//    }
 
 
 //    private void writeObject(ObjectOutputStream out) throws IOException {
@@ -41,12 +56,12 @@ public class Student extends Parent implements Serializable  {
 //        ois.defaultReadObject();
 //        gender=ois.readChar();
 //    }
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", nam='" + nam + '\'' +
-                ", gender=" + gender +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Student{" +
+//                "id=" + id +
+//                ", nam='" + nam + '\'' +
+//                ", gender=" + gender +
+//                '}';
+//    }
 }

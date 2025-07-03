@@ -28,13 +28,13 @@ public class StudentExternalixation implements Externalizable {
 
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
-        out.writeObject(name);
+        out.writeUTF(name);
 
     }
 
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-        this.name= String.valueOf(in.readInt());
+        this.name= in.readUTF();
 
     }
 }

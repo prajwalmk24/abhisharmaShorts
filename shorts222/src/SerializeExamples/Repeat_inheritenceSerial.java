@@ -11,7 +11,7 @@ public class Repeat_inheritenceSerial {
 
     // achieving serialization through inheritence
     public static void main(String[] args) {
-
+/*
         System.out.println("inheritenceSerial");
 
         Student s1 = new Student(101, "Prajwal",'F');
@@ -47,6 +47,6 @@ public class Repeat_inheritenceSerial {
         }
 
 
-
+*/
     }
 }
