@@ -9,6 +9,9 @@ public class test {
     }
     @FunctionalInterface
     interface B extends A {
+
+
+
 // No new abstract method declared here
     }
 //    Answer: Yes, B is valid. It inherits abstract method from A
@@ -29,11 +32,17 @@ public class test {
             System.out.println("llll");
         }
 
+
+        // possible beacause of Object class
+         boolean equals(Object obj);
+
+
     }
 
 
-    /*
-//    Scenario 3: What happens if a Functional Interface (C) extends two interfaces (A and B) that each have different abstract methods? Is C is a valid interface?
+/*
+//    Scenario 3: What happens if a Functional Interface (C)
+//    extends two interfaces (A and B) that each have different abstract methods? Is C is a valid interface?
     interface A1 {
         void methodA();
     }
@@ -41,9 +50,11 @@ public class test {
         void methodB();
     }
     @FunctionalInterface
-    interface C extends A1, B1 { // No new methods
+    interface C extends A1,B1{ // No new methods
         //
     }
+
+    // Ans : No not possible : Multiple non-overriding abstract methods
 */
 
 
