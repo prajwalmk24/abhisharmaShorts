@@ -1,4 +1,4 @@
-package examples;
+package testKnowledge;
 
 interface A {
     default void print() {

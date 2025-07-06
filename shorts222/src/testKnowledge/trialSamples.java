@@ -1,7 +1,4 @@
-package examples;
-
-import java.util.ArrayList;
-import java.util.List;
+package testKnowledge;
 
 @FunctionalInterface
 interface operation {

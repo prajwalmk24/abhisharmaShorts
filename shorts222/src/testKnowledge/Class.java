@@ -1,4 +1,4 @@
-package examples;
+package testKnowledge;
 
 public class Class {
     
