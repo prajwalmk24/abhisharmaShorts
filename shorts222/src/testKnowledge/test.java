@@ -4,13 +4,14 @@ public class test {
 
 //    Scenario 1: A Functional Interface extends another interface with an abstract method.
 //    In the below example, Is B still a valid functional interface?
-    interface A {
+    interface A1 {
+        void methodA();
+    }
+    interface A2 {
         void methodA();
     }
     @FunctionalInterface
-    interface B extends A {
-
-
+    interface B extends A1,A2 {
 
 // No new abstract method declared here
     }
@@ -59,8 +60,13 @@ public class test {
 
 
     public static void main(String[] args) {
-        Aa test2= new Aa() {
+        Aa aa= new Aa() {
 
+
+//            @Override
+//            public void test(String s) {
+//
+//            }
 
             @Override
             public void test(String s) {
@@ -71,6 +77,15 @@ public class test {
             public void test() {
                 Aa.super.test();
             }
+
+            @Override
+            public void method() {
+                Aa.super.method();
+            }
         };
+
+
+        aa.test();
+        System.out.println("lowda");
     }
 }

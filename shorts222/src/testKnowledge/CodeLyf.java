@@ -8,15 +8,16 @@ class X {
         System.out.println("class");
     }
 }
+
 interface Y {
-     default void show() {
-System.out.println("interface");
-}
+    default void show() {
+        System.out.println("interface");
+    }
 }
 
-class CodeLyf extends X implements Y{
+class CodeLyf extends X implements Y {
     public static void main(String[] args) {
-        CodeLyf c=new CodeLyf();
+        CodeLyf c = new CodeLyf();
         c.show();
 
 

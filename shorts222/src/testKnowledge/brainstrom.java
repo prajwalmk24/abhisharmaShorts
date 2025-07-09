@@ -19,11 +19,11 @@ class Sub extends Super {
     }
 }
 
-public class MyComponent {
+public class brainstrom {
     public static void main(String[] args) {
         new Sub();
 
-      Sub  s1=new Sub();
+        Sub s1 = new Sub();
         s1.print();
         System.out.println("ll");
     }

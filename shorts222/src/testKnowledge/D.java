@@ -5,19 +5,22 @@ interface A {
         System.err.println("A");
     }
 }
+
 interface B {
     default void print() {
         System.err.println("B");
     }
 }
-class Combine implements A,B {
+
+class Combine implements A, B {
     @Override
     public void print() {
-
-        A.super.print();
-
+        B.super.print();
     }
+
+
 }
+
 public class D {
     public static void main(String[] args) {
         new Combine().print();
