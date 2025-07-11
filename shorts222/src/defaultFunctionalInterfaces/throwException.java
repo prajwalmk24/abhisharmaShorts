@@ -9,8 +9,17 @@ interface Operation{
 
         }
 
+
+@FunctionalInterface
+interface Operation2{
+    int Op(int a, int b);
+
+}
+
 public class throwException {
     public static void main(String[] args) {
+
+        /*
         Operation operation = (q,w)->{
             if(q/w ==0)
                 throw new IOException("My custom IO Exception");
@@ -25,6 +34,13 @@ public class throwException {
             catch (Exception e){
                     e.printStackTrace();
             }
+*/
+
+            Operation2 op2 =(a,b)-> {
+                return a+b;
+            };
+
+        System.out.println("outptu "+op2.Op(2,23));
 
 
     }
